@@ -16,17 +16,25 @@
                 <th>Produk</th>
                 <th>Harga</th>
                 <th>Jumlah</th>
+                <th>deskripsi</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
+              @foreach ($getproduk as $post)
               <tr>
-                <td>183</td>
-                <td>John Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-success">Approved</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                <td style="width: 200px" >{{ $post->product}}</td>
+                <td style="width: 500px" >{{ $post->description }}</td>
+                <td style="width: 500px" >{{ $post->harga}}</td>
+                <td style="width: 500px" >{{ $post->jumlah }}</td>
+                <td style="width: 500px" >{{ $post->category_id }}</td>
+                <td style="width: 100px"><button class="btn btn-warning">Edit</button></td>
+                <td>
+                <a href="{{route('produkDelete', $post->id)}}" class="btn btn-sm btn-danger">Hapus</a>
+
+                </td>
               </tr>
+              @endforeach
             </tbody>
           </table>
         </div>

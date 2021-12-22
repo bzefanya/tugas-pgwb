@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/produk', [ProdukController::class, 'index']);
+Route::get('/delete/{id}', [ProdukController::class, 'delete'])->name('produkDelete');
+
